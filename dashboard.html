@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">Event Management</div>
+    <ul class="menu">
+        <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
+        <li><a id="bookEventLink" href="book_event.html">Book Event</a></li>
+        <li><a id="paymentLink" href="payment.html">Make Payment</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<!-- Slider -->
+<div class="slider">
+     <div class="overlay"></div>
+    <div class="slides">
+        <img src="./Images/image 1.jpg" class="active" alt="Slide 1">
+        <img src="./Images/image 2.jpg" alt="Slide 2">
+        <img src="./Images/image 3.jpg" alt="Slide 3">
+        <img src="./Images/image 4.jpg" alt="Slide 4">
+    </div>
+    <div class="slider-text">
+        <h1>Enjoy Your Events</h1>
+        <p>Celebrate your special moments with unforgettable experiences. From vibrant weddings to joyous celebrations, we make every event unique, memorable, and perfectly tailored to your style and preferences.</p>
+    </div>
+    <div class="dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</div>
+
+
+
+<!-- Services / Cards Section -->
+<div class="container2">
+    <h1 style="color: #0077ff;">Services</h1>
+    <div class="cards-wrapper">
+        <div class="card">
+            <img src="./Images/concert.jpg" class="card-img">
+            <h3>Concerts</h3>
+            <p>Enjoy live music events.</p> 
+            <p>Price || 20000</p>
+            <a href="login.html">Book Now</a>
+        </div>
+        <div class="card">
+            <img src="./Images/mehndi.jpg" class="card-img">
+            <h3>Mehndi</h3>
+            <p>Colorful pre-wedding celebrations.</p>
+             <p>Price || 30000</p>
+            <a href="login.html">Book Now</a>
+        </div>
+        <div class="card">
+            <img src="./Images/barat.jpg" class="card-img">
+            <h3>Baratt</h3>
+            <p>Grand wedding processions.</p>
+             <p>Price || 50000</p>
+            <a href="login.html">Book Now</a>
+        </div>
+        <div class="card">
+            <img src="./Images/reception.jpg" class="card-img">
+            <h3>Reception</h3>
+            <p>Elegant post-wedding gatherings.</p>
+             <p>Price || 80000</p>
+            <a href="login.html">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div class="about-container">
+    <h2 class="about-heading" style="color: #0077ff;">About Us</h2>
+    <div class="about-box">
+        <p>
+            At <strong>EventSphere Management</strong>, we believe that every occasion deserves to be extraordinary. 
+            Our mission is to transform your vision into a memorable experience with creativity, precision, and flawless execution. 
+            Whether it's a wedding, mehndi ceremony, concert, corporate event, or private gathering, our dedicated team ensures that every detail is perfectly crafted.
+            <br><br>
+            From planning to décor, entertainment to management, we work closely with our clients to bring their ideas to life. 
+            With a focus on professionalism, customized solutions, and customer satisfaction, EventSphere is committed to making your events stress-free, enjoyable, and unforgettable.
+        </p>
+        <button class="about-btn"><a href="login.html">Book Your Event</a></button>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<div class="gallery-container">
+    <h2 class="gallery-title" style="color: #0077ff;">Recent Projects</h2>
+    <div class="gallery-grid">
+        <div class="big-img">
+            <img src="./Images/concert.jpg" alt="">
+        </div>
+        <div class="small-img">
+            <img src="./Images/mehndi.jpg" alt="">
+        </div>
+        <div class="small-img">
+            <img src="./Images/reception.jpg" alt="">
+        </div>
+        <div class="small-img">
+            <img src="./Images/concert2.jpg" alt="">
+        </div>
+        <div class="big-img">
+            <img src="./Images/mehndi 2.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <p class="small-heading">[ FREE CONSULTATION ]</p>
+        <h1>Book A Free Consultation</h1>
+        <div class="divider"></div>
+        <p class="small-heading">[ CALL US TODAY ]</p>
+        <h2 class="phone-number">+92 314 1979700</h2>
+        <p class="signup-text">Need an account? <a href="login.html">Sign up here</a></p>
+    </div>
+
+    <div class="footer-middle">
+        <div class="footer-left">
+            <h3>Contacts</h3>
+            <p>C-14, 1st Sunset Street, Phase-2 Extension, D.H.A<br>Karachi, Pakistan</p>
+            <p>hamzamaagi310@gmail.com</p>
+            <p>+92 314 1979700</p>
+        </div>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Book Event Logo">
+            <p class="tagline">
+                The secret is a smoothly working team of disparate people who are each endowed with some special talent.
+            </p>
+        </div>
+        <div class="footer-right">
+            <h3>Latest Projects</h3>
+            <ul>
+                <li>UIIT Annual Dinner(2025)</li>
+                <li>Singing Competitions</li>
+                <li>Complete Marriage function</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 | Developed with ❤️ by <span>Muhammad Talal</span></p>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+<script>
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slides img');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach((slide,i)=>{
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+        if(i===index){
+            slide.classList.add('active');
+            dots[i].classList.add('active');
+        }
+    });
+    currentSlideIndex = index;
+}
+
+function currentSlide(index){
+    showSlide(index);
+}
+
+// Auto-slide every 4 seconds
+setInterval(()=>{
+    let next = (currentSlideIndex + 1) % slides.length;
+    showSlide(next);
+},4000);
+
+showSlide(currentSlideIndex);
+
+</script>
+
+</html>

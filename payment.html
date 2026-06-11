@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Make Payment</title>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Event Management</div>
+    <ul class="menu">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="book_event.html">Book Event</a></li>
+        <li><a href="payment.html">Make Payment</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<div class="form-box">
+    <h1>Make Payment</h1>
+
+    <select id="method">
+        <option value="">Payment Method</option>
+        <option>Bank Transfer</option>
+        <option>Cash Payment</option>
+        <option>JazzCash</option>
+        <option>Easypaisa</option>
+    </select>
+
+    <input type="text" id="eventId" readonly placeholder="Event ID">
+    <input type="number" id="amount" placeholder="Enter Amount">
+
+    <button id="payBtn">Pay Now</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

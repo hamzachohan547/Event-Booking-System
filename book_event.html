@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Book Event</title>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Event Management</div>
+    <ul class="menu">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="book_event.html">Book Event</a></li>
+        <li><a href="payment.html">Make Payment</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<div class="form-box">
+    <h1>Book Event</h1>
+
+    <select id="eventType">
+        <option value="">Select Event</option>
+        <option value="Concert">Concert</option>
+        <option value="Mehndi">Mehndi</option>
+        <option value="WeddingProcession">Wedding procession</option>
+        <option value="Reception">Reception</option>
+    </select>
+
+    <input type="date" id="date">
+    <input type="text" id="name" placeholder="Your name">
+     <input type="Number" id="number" placeholder="Your Number">
+
+
+    <button onclick="bookEvent()">Book Event</button>
+</div>
+
+<script>
+async function bookEvent() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+        alert("Please login first");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const eventType = document.getElementById("eventType").value;
+    const date = document.getElementById("date").value;
+    const name = document.getElementById("name").value;
+    const number = document.getElementById("number").value;
+
+    if (!eventType || !date) {
+        alert("Please select event and date");
+        return;
+    }
+    if (!number|| !name) {
+        alert("Please select name and number");
+        return;
+    }
+    // if (!eventType || !number) {
+    //     alert("Please select event and date");
+    //     return;
+    // }
+
+    const res = await fetch("http://localhost:5000/api/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: user._id, eventType, date,name,number })
+    });
+
+    const data = await res.json();
+
+    // 🔑 Correct key
+    localStorage.setItem("bookedEventId", data.eventId);
+
+    alert(data.message);
+    window.location.href = "payment.html";
+}
+
+</script>
+
+</body>
+</html>
